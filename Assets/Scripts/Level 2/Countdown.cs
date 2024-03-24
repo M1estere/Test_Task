@@ -5,9 +5,9 @@ public class Countdown : MonoBehaviour
 {
     public bool CountdownGo { get; set; } = false;
 
-    [SerializeField] private float _roundTime = 60;
     [SerializeField] private Image _progressCircle;
 
+    private float _roundTime;
     private float _currentRoundTime;
     private int _finished = 0;
 
@@ -19,6 +19,7 @@ public class Countdown : MonoBehaviour
 
     private void ResetValues()
     {
+        _roundTime = FindObjectOfType<RoundController>().GetRoundTime();
         _currentRoundTime = _roundTime;
         _progressCircle.fillAmount = 0;
         _finished = 0;

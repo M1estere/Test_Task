@@ -11,8 +11,11 @@ public class RoundController : MonoBehaviour
 
     [SerializeField] private GameObject _dayComingScreen;
     [SerializeField] private GameObject _nightComingScreen;
+    [Space(5)]
+
     [SerializeField] private GameObject _gameOverScreen;
     [SerializeField] private TMPro.TMP_Text _statsText;
+    [Space(5)]   
 
     [SerializeField] private Animator _questionCanvasAnimator;
 
@@ -33,8 +36,11 @@ public class RoundController : MonoBehaviour
         RoundStart();
     }
 
+    public float GetRoundTime() => _levelConfiguration.RoundTime;
+
     private void RoundStart()
     {
+        LevelController.Instance.CanDrag = true;
         EnableDayCanvas();
     }
 
@@ -53,6 +59,9 @@ public class RoundController : MonoBehaviour
         Time.timeScale = 0;
         _nightComingScreen.SetActive(true);
 
+        LevelController.Instance.EndRound();
+        LevelController.Instance.CanDrag = false;
+
         yield return new WaitForSecondsRealtime(1);
 
         Time.timeScale = 1;
@@ -63,6 +72,9 @@ public class RoundController : MonoBehaviour
         _nightComingScreen.SetActive(false);
 
         CheckAnswers();
+
+        yield return new WaitForSecondsRealtime(6);
+
         CheckRoundStats();
     }
 

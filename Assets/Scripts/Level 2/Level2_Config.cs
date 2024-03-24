@@ -6,4 +6,7 @@ public class Level2Config : ScriptableObject
 {
     [field: SerializeField]
     public List<Question> Questions { get; private set; } = new();
+
+    [field: SerializeField]
+    public float RoundTime { get; private set; } = 10;
 }

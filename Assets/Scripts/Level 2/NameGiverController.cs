@@ -11,7 +11,7 @@ public class NameGiverController : MonoBehaviour
 
     private void Awake() => _cameraController = FindObjectOfType<CameraController>();
 
-    private void ResetValues()
+    public void ResetValues()
     {
         _currentHuman = null;
         _nameInputField.text = "";

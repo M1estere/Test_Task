@@ -34,7 +34,9 @@ public class Human : MonoBehaviour
     }
 
     private void OnMouseOver()
-    { 
+    {
+        if (LevelController.Instance.CanDrag == false) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             FindObjectOfType<SetupFastMove>().Open(this);
