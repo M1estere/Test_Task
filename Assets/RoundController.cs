@@ -11,10 +11,12 @@ public class RoundController : MonoBehaviour
     private int _roundIndex = -1;
 
     private Countdown _countDown;
+    private SetupFastMove _setupFastMove;
 
     private void Awake()
     {
         _countDown = FindObjectOfType<Countdown>();
+        _setupFastMove = FindObjectOfType<SetupFastMove>();
     }
 
     private void Start()
@@ -29,7 +31,7 @@ public class RoundController : MonoBehaviour
         _roundIndex += 1;
         _questionText.SetText(_levelConfiguration.Questions[_roundIndex].Content);
         SetStands();
-
+        _setupFastMove.Set(_levelConfiguration.Questions[_roundIndex].Answers.ToArray());
 
 
         _countDown.StartCountdown();
@@ -58,25 +60,26 @@ public class RoundController : MonoBehaviour
 
     private void DisplayGameOver() 
     { 
-    
+        
     }
 
     private void SetStands()
     {
         for (int i = 0; i < _stands.Length; i++)
         {
-            _stands[i].SetText(_levelConfiguration.Questions[_roundIndex].Answers[i].Content);
+            _stands[i].SetText($"{i + 1}. " + _levelConfiguration.Questions[_roundIndex].Answers[i].Content);
         }
     }
 
     public void EndRound()
     {
         EnableNightCanvas();
+        CheckAnswers();
         CheckRoundStats();
     }
 
     public void CheckAnswers()
     {
-
+        print("Checking answers...");
     }
 }

@@ -7,17 +7,25 @@ public class NameGiverController : MonoBehaviour
     [SerializeField] private TMPro.TMP_InputField _nameInputField;
 
     private Human _currentHuman;
+    private CameraController _cameraController;
+
+    private void Awake() => _cameraController = FindObjectOfType<CameraController>();
 
     private void ResetValues()
     {
         _currentHuman = null;
         _nameInputField.text = "";
+        _cameraController.enabled = true;
     }
 
     public void OpenGiver(Human human)
     {
         _currentHuman = human;
+
         _field.SetActive(true);
+        _nameInputField.text = human.Name;
+
+        _cameraController.enabled = false;
     }
 
     public void Apply()

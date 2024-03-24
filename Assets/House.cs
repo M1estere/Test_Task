@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer))]
 public class House : MonoBehaviour
 {
     public List<Human> PeopleInHouse { get; set; } = new();
@@ -8,6 +9,35 @@ public class House : MonoBehaviour
     [SerializeField] private int _houseIndex;
 
     public int GetIndex => _houseIndex - 1;
+
+    private MeshRenderer _meshRenderer;
+
+    private void Awake()
+    {
+        _meshRenderer = GetComponent<MeshRenderer>();
+
+        _meshRenderer.materials[1].SetFloat("_Scale", 0);
+        _meshRenderer.materials[1].SetColor("_Color", Color.red);
+    }
+
+    private void OnMouseOver()
+    {
+        if (LevelController.Instance.CurrentHuman != null)
+        {
+            _meshRenderer.materials[1].SetFloat("_Scale", 0.06f);
+        }
+    }
+
+    private void OnMouseExit() => _meshRenderer.materials[1].SetFloat("_Scale", 0);
+
+    private void OnMouseDown()
+    {
+        if (LevelController.Instance.CurrentHuman != null)
+        {
+            FindObjectOfType<SetupFastMove>().TransferToHouse(GetIndex);
+            _meshRenderer.materials[1].SetFloat("_Scale", 0);
+        }
+    }
 
     public void AddHuman(Human human)
     {

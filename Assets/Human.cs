@@ -17,13 +17,12 @@ public class Human : MonoBehaviour
     { 
         if (Input.GetMouseButtonDown(0))
         {
-            print($"Clicked left on {gameObject.name} as ({Name})");
+            FindObjectOfType<SetupFastMove>().Open(this);
+            FindObjectOfType<LevelController>().CurrentHuman = this;
         }
         
         if (Input.GetMouseButtonDown(1))
         {
-            print($"Clicked right on {gameObject.name} as ({Name})");
-
             FindObjectOfType<NameGiverController>().OpenGiver(this);
         }
     }

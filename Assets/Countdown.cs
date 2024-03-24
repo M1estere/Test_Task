@@ -29,11 +29,11 @@ public class Countdown : MonoBehaviour
         if (CountdownGo == false) return;
 
         _currentRoundTime -= Time.deltaTime;
-        _progressCircle.fillAmount = 1 - (_currentRoundTime / 60);
+        _progressCircle.fillAmount = 1 - (_currentRoundTime / _roundTime);
 
         if (_progressCircle.fillAmount >= .998f && _finished++ == 0)
         {
-            print("Time's up");
+            FindObjectOfType<RoundController>().EndRound();
         }
     }
 }
