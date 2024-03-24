@@ -59,7 +59,19 @@ public class House : MonoBehaviour
 
     public void KillAllHumans()
     {
+        foreach (Human human in PeopleInHouse)
+            Destroy(human.gameObject);
+
         PeopleInHouse.Clear();
-        print($"Now there is no person in {gameObject.name} ({_houseIndex - 1})");
+        print("All people dead");
+    }
+
+    public void ResurrectAllHumans()
+    {
+        foreach (Human human in PeopleInHouse)
+            human.gameObject.SetActive(true);
+
+        PeopleInHouse.Clear();
+        print("All people resurrected");
     }
 }

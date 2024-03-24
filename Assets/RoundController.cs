@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class RoundController : MonoBehaviour
@@ -6,12 +6,13 @@ public class RoundController : MonoBehaviour
     [SerializeField] private Level2Config _levelConfiguration;
 
     [SerializeField] private TMPro.TMP_Text[] _stands;
-
     [SerializeField] private TMPro.TMP_Text _questionText;
     [Space(5)]
 
     [SerializeField] private GameObject _dayComingScreen;
     [SerializeField] private GameObject _nightComingScreen;
+    [SerializeField] private GameObject _gameOverScreen;
+    [SerializeField] private TMPro.TMP_Text _statsText;
 
     [SerializeField] private Animator _questionCanvasAnimator;
 
@@ -28,6 +29,7 @@ public class RoundController : MonoBehaviour
 
     private void Start()
     {
+        FindObjectOfType<LevelStats>().UpdateInfo(_roundIndex + 2, FindObjectsOfType<Human>().Length);
         RoundStart();
     }
 
@@ -89,19 +91,24 @@ public class RoundController : MonoBehaviour
 
     private void CheckRoundStats()
     {
-        if (FindObjectsOfType<Human>().Length <= 0 || _roundIndex >= _levelConfiguration.Questions.Count)
+        int alive = FindObjectsOfType<Human>().Length;
+        if (alive <= 0 || _roundIndex >= _levelConfiguration.Questions.Count)
         {
-            DisplayGameOver();
+            DisplayGameOver(alive);
         } else
         {
             print("Okay");
+            FindObjectOfType<LevelStats>().UpdateInfo(_roundIndex + 2, alive);
             RoundStart();
         }
     }
 
-    private void DisplayGameOver() 
-    { 
-        
+    private void DisplayGameOver(int amount) 
+    {
+        Time.timeScale = 0;
+
+        _statsText.SetText($"Раундов: {_roundIndex + 1} | Человек: {amount} | Счет: {LevelController.Instance.Score}");
+        _gameOverScreen.SetActive(true);
     }
 
     private void SetStands()
@@ -119,6 +126,15 @@ public class RoundController : MonoBehaviour
 
     public void CheckAnswers()
     {
-        print("Checking answers...");
+        House[] houses = FindObjectsOfType<House>();
+
+        foreach (House house in houses)
+        {
+            print(house.gameObject.name);
+            if (house.PeopleInHouse.Count < 1) continue;
+
+            if (_levelConfiguration.Questions[_roundIndex].Answers[house.GetIndex].IsCorrect == false) house.KillAllHumans();
+            else house.ResurrectAllHumans();
+        }
     }
 }
