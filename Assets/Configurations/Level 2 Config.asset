@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 2 Config
   m_EditorClassIdentifier: 
   <Questions>k__BackingField:
-  - <Content>k__BackingField: "1 \u0427\u0435\u043C\u0443 \u0440\u0430\u0432\u043D\u043E
+  - <Content>k__BackingField: "\u0427\u0435\u043C\u0443 \u0440\u0430\u0432\u043D\u043E
       2 + 2"
     <Answers>k__BackingField:
     - <Content>k__BackingField: 4
@@ -37,7 +37,7 @@ MonoBehaviour:
       <IsCorrect>k__BackingField: 0
     - <Content>k__BackingField: 2 + 2
       <IsCorrect>k__BackingField: 1
-  - <Content>k__BackingField: "2 \u0427\u0435\u043C\u0443 \u0440\u0430\u0432\u043D\u043E
+  - <Content>k__BackingField: "\u0427\u0435\u043C\u0443 \u0440\u0430\u0432\u043D\u043E
       2 + 2"
     <Answers>k__BackingField:
     - <Content>k__BackingField: 4
@@ -61,7 +61,7 @@ MonoBehaviour:
       <IsCorrect>k__BackingField: 0
     - <Content>k__BackingField: 2 + 2
       <IsCorrect>k__BackingField: 1
-  - <Content>k__BackingField: "3 \u0427\u0435\u043C\u0443 \u0440\u0430\u0432\u043D\u043E
+  - <Content>k__BackingField: "\u0427\u0435\u043C\u0443 \u0440\u0430\u0432\u043D\u043E
       2 + 2"
     <Answers>k__BackingField:
     - <Content>k__BackingField: 4
@@ -85,7 +85,7 @@ MonoBehaviour:
       <IsCorrect>k__BackingField: 0
     - <Content>k__BackingField: 2 + 2
       <IsCorrect>k__BackingField: 1
-  - <Content>k__BackingField: "4 \u0427\u0435\u043C\u0443 \u0440\u0430\u0432\u043D\u043E
+  - <Content>k__BackingField: "\u0427\u0435\u043C\u0443 \u0440\u0430\u0432\u043D\u043E
       2 + 2"
     <Answers>k__BackingField:
     - <Content>k__BackingField: 4

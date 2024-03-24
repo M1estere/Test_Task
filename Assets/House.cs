@@ -35,7 +35,7 @@ public class House : MonoBehaviour
         if (LevelController.Instance.CurrentHuman != null)
         {
             FindObjectOfType<SetupFastMove>().TransferToHouse(GetIndex);
-            _meshRenderer.materials[1].SetFloat("_Scale", 0);
+            _meshRenderer.materials[^1].SetFloat("_Scale", 0);
         }
     }
 

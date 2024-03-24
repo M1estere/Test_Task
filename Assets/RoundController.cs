@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class RoundController : MonoBehaviour
@@ -7,6 +8,12 @@ public class RoundController : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text[] _stands;
 
     [SerializeField] private TMPro.TMP_Text _questionText;
+    [Space(5)]
+
+    [SerializeField] private GameObject _dayComingScreen;
+    [SerializeField] private GameObject _nightComingScreen;
+
+    [SerializeField] private Animator _questionCanvasAnimator;
 
     private int _roundIndex = -1;
 
@@ -27,24 +34,57 @@ public class RoundController : MonoBehaviour
     private void RoundStart()
     {
         EnableDayCanvas();
-
-        _roundIndex += 1;
-        _questionText.SetText(_levelConfiguration.Questions[_roundIndex].Content);
-        SetStands();
-        _setupFastMove.Set(_levelConfiguration.Questions[_roundIndex].Answers.ToArray());
-
-
-        _countDown.StartCountdown();
     }
 
     private void EnableDayCanvas()
     {
-
+        StartCoroutine(DayCanvasCoroutine());
     }
 
     private void EnableNightCanvas()
     {
+        StartCoroutine(NightCanvasCoroutine());
+    }
 
+    private IEnumerator NightCanvasCoroutine()
+    {
+        Time.timeScale = 0;
+        _nightComingScreen.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(1);
+
+        Time.timeScale = 1;
+        _nightComingScreen.GetComponent<Animator>().SetTrigger("Close");
+
+        yield return new WaitForSecondsRealtime(.5f);
+
+        _nightComingScreen.SetActive(false);
+
+        CheckAnswers();
+        CheckRoundStats();
+    }
+
+    private IEnumerator DayCanvasCoroutine()
+    {
+        Time.timeScale = 0;
+        _dayComingScreen.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(1);
+
+        Time.timeScale = 1;
+        _dayComingScreen.GetComponent<Animator>().SetTrigger("Close");
+
+        _roundIndex += 1;
+        _questionText.SetText($"{_roundIndex + 1}. " + _levelConfiguration.Questions[_roundIndex].Content);
+        SetStands();
+        _setupFastMove.Set(_levelConfiguration.Questions[_roundIndex].Answers.ToArray());
+
+        _countDown.StartCountdown();
+
+        yield return new WaitForSecondsRealtime(.5f);
+
+        _questionCanvasAnimator.SetTrigger("Open");
+        _dayComingScreen.SetActive(false);
     }
 
     private void CheckRoundStats()
@@ -55,6 +95,7 @@ public class RoundController : MonoBehaviour
         } else
         {
             print("Okay");
+            RoundStart();
         }
     }
 
@@ -74,8 +115,6 @@ public class RoundController : MonoBehaviour
     public void EndRound()
     {
         EnableNightCanvas();
-        CheckAnswers();
-        CheckRoundStats();
     }
 
     public void CheckAnswers()
