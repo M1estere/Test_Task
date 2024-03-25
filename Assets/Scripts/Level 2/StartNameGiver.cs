@@ -15,12 +15,13 @@ public class StartNameGiver : MonoBehaviour
 
     private void Awake()
     {
+        List<string> tNames = new(_names);
         _humans = new(FindObjectsOfType<Human>());
 
         foreach (Human human in _humans)
         {
-            string name = _names[Random.Range(0, _names.Count)];
-            _names.Remove(name);
+            string name = tNames[Random.Range(0, tNames.Count)];
+            tNames.Remove(name);
 
             human.SetName(name);
         }

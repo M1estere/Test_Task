@@ -532,8 +532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 578.75, y: -469.914}
-  m_SizeDelta: {x: 1157.5, y: 939.828}
+  m_AnchoredPosition: {x: 578.75, y: -640.1995}
+  m_SizeDelta: {x: 1157.5, y: 1280.399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &153329781
 MonoBehaviour:
@@ -555,10 +555,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>\u0423\u0440\u043E\u0432\u0435\u043D\u044C 1</b>\n\t<b>\u041A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430</b>\n\tWASD
-    - \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u043A\u0430\u043C\u0435\u0440\u044B\n\tQ/E
-    - \u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u043A\u0430\u043C\u0435\u0440\u044B\n\tR/F
-    - \u0437\u0443\u043C/\u043E\u0442\u0434\u0430\u043B\u0435\u043D\u0438\u0435\n\n<b>Level
+  m_text: "<b>\u0423\u0440\u043E\u0432\u0435\u043D\u044C 1_5</b>\n\t<b>\u041A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430</b>\n\tAD
+    - \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430\n\t\u041F\u0440\u043E\u0431\u0435\u043B
+    - \u043F\u0440\u044B\u0436\u043E\u043A\n\n<b>\u0423\u0440\u043E\u0432\u0435\u043D\u044C
+    1</b>\n\t<b>\u041A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430</b>\n\tAD
+    - \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430\n\n<b>\u0423\u0440\u043E\u0432\u0435\u043D\u044C
     2</b>\n\t<b>\u041A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430</b>\n\tWASD
     - \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u043A\u0430\u043C\u0435\u0440\u044B\n\tQ/E
     - \u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u043A\u0430\u043C\u0435\u0440\u044B\n\tR/F
@@ -567,7 +568,18 @@ MonoBehaviour:
     (\u0437\u0430\u0436\u0430\u0442\u044C \u0438 \u043F\u043E\u0442\u044F\u043D\u0443\u0442\u044C)\n\t\u041F\u041A\u041C
     - \u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u043A\u0430\u043C\u0435\u0440\u044B
     (\u0437\u0430\u0436\u0430\u0442\u044C \u0438 \u043F\u043E\u0442\u044F\u043D\u0443\u0442\u044C)\n\t\u041A\u043E\u043B\u0435\u0441\u0438\u043A\u043E
-    - \u043F\u0440\u0438\u0431\u043B\u0438\u0436\u0435\u043D\u0438\u0435/\u043E\u0442\u0434\u0430\u043B\u0435\u043D\u0438\u0435"
+    - \u043F\u0440\u0438\u0431\u043B\u0438\u0436\u0435\u043D\u0438\u0435/\u043E\u0442\u0434\u0430\u043B\u0435\u043D\u0438\u0435\n\n\t<b>\u041E\u0431\u0449\u0435\u0435</b>\n\t\u041D\u0430\u0436\u0430\u0442\u044C
+    \u043D\u0430 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u041B\u041A\u041C
+    - \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u0435\u0433\u043E\n\t\u041D\u0430\u0436\u0430\u0442\u044C
+    \u043D\u0430 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u041F\u041A\u041C
+    - \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u043F\u0430\u043D\u0435\u043B\u044C
+    \u0434\u043B\u044F \u0435\u0433\u043E \u043F\u0435\u0440\u0435\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u044F\n\t\u041D\u0430\u0436\u0430\u0442\u044C
+    \u043D\u0430 \u0434\u043E\u043C (\u043F\u0440\u0438 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u043C
+    \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0435) - \u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C
+    \u0435\u0433\u043E \u0432 \u0434\u043E\u043C\n\t\u041D\u0430\u0436\u0430\u0442\u044C
+    \u043D\u0430 \u0434\u043E\u043C (\u0435\u0441\u043B\u0438 \u0442\u0430\u043C
+    \u0435\u0441\u0442\u044C \u043B\u044E\u0434\u0438) - \u0432\u0435\u0440\u043D\u0443\u0442\u044C
+    \u043E\u0442\u0442\u0443\u0434\u0430 \u043E\u0434\u043D\u043E\u0433\u043E \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1fe77e84c6ba3cb409cfe2dfa8d21c8f, type: 2}
   m_sharedMaterial: {fileID: -603119775175308452, guid: 1fe77e84c6ba3cb409cfe2dfa8d21c8f,
@@ -656,6 +668,7 @@ GameObject:
   - component: {fileID: 170296035}
   - component: {fileID: 170296037}
   - component: {fileID: 170296036}
+  - component: {fileID: 170296038}
   m_Layer: 5
   m_Name: Previous
   m_TagString: Untagged
@@ -779,6 +792,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170296034}
   m_CullTransparentMesh: 1
+--- !u!114 &170296038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170296034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 170296036}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2079407537}
+        m_TargetAssemblyTypeName: LevelsScreen, Assembly-CSharp
+        m_MethodName: OpenPreviousLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &198846176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,6 +1206,7 @@ MonoBehaviour:
   - {fileID: 627301957}
   - {fileID: 2027305346}
   - {fileID: 848580791}
+  _screenToggle: {fileID: 2100698754}
 --- !u!1 &245332836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1239,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 809551849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.36995387}
+  m_AnchorMin: {x: 0, y: 0.53753865}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -2187,8 +2257,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0045166016, y: -173.84705}
-  m_SizeDelta: {x: -0.009033203, y: 347.693}
+  m_AnchoredPosition: {x: 0, y: -344.1321}
+  m_SizeDelta: {x: -0.009033203, y: 688.26404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566021449
 MonoBehaviour:
@@ -3400,7 +3470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -59.99994, y: -69.453674}
+  m_AnchoredPosition: {x: -60, y: -69.453735}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &811930434
@@ -4728,6 +4798,7 @@ GameObject:
   - component: {fileID: 1190075821}
   - component: {fileID: 1190075823}
   - component: {fileID: 1190075822}
+  - component: {fileID: 1190075824}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -4851,6 +4922,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190075820}
   m_CullTransparentMesh: 1
+--- !u!114 &1190075824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190075820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1190075822}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2079407537}
+        m_TargetAssemblyTypeName: LevelsScreen, Assembly-CSharp
+        m_MethodName: OpenNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1201627034
 GameObject:
   m_ObjectHideFlags: 0
@@ -7700,8 +7827,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 245332838}
   m_HandleRect: {fileID: 245332837}
   m_Direction: 2
-  m_Value: 1.0000015
-  m_Size: 0.6300461
+  m_Value: 1.0000001
+  m_Size: 0.46246135
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7915,7 +8042,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 224330727}
+        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
+        m_MethodName: ChangeScreenType
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &2106933893
 GameObject:

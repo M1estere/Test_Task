@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] private Color _inactiveColor;
     [SerializeField] private TMPro.TMP_Text[] _titles;
     [SerializeField] private GameObject[] _areas;
+
+    [SerializeField] private Toggle _screenToggle;
+
+    private void Awake()
+    {
+        _screenToggle.isOn = Screen.width == 1280 ? false : true;
+    }
 
     public void CloseOptions()
     {
@@ -32,6 +40,18 @@ public class OptionsMenu : MonoBehaviour
                 _titles[i].color = Color.white;
                 _areas[i].SetActive(true);
             }
+        }
+    }
+
+    public void ChangeScreenType(bool state)
+    {
+        if (state)
+        {
+            Screen.SetResolution(1920, 1080, true);
+        }
+        else
+        {
+            Screen.SetResolution(1280, 720, false);
         }
     }
 }

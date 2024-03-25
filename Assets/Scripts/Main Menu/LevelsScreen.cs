@@ -33,19 +33,29 @@ public class LevelsScreen : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (_currentLevelIndex >= _mainMenuConfiguration.Levels.Count - 1) return;
-
-            _currentLevelIndex++;
-            OpenLevel();
+            OpenNextLevel();
         }
 
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (_currentLevelIndex <= 0) return;
-
-            _currentLevelIndex--;
-            OpenLevel();
+            OpenPreviousLevel();
         }
+    }
+
+    public void OpenNextLevel()
+    {
+        if (_currentLevelIndex >= _mainMenuConfiguration.Levels.Count - 1) return;
+
+        _currentLevelIndex++;
+        OpenLevel();
+    }
+
+    public void OpenPreviousLevel()
+    {
+        if (_currentLevelIndex <= 0) return;
+
+        _currentLevelIndex--;
+        OpenLevel();
     }
 
     private void OpenLevel()
