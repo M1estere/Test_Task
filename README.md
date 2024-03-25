@@ -45,18 +45,28 @@
 ## Скриншоты
 
 <div align="left">
-  <img src="https://github.com/M1estere/Test_Task/assets/58213582/bd5ad84a-80c3-43aa-a4da-543cc4101e3a" width="800" /><br />
-  
-  **Уровень 1_5**
-  <br /><br />
+   <img src="https://github.com/M1estere/Test_Task/assets/58213582/6babdd95-9f52-4508-a05e-74570fb236e6" width="800" /><br />
 
-  <img src="https://github.com/M1estere/Test_Task/assets/58213582/5b693115-b098-45f3-9ea8-15afbff708b6" width="800" /><br />
+   **Главное Меню**
+   <br /><br />
+
+   <img src="https://github.com/M1estere/Test_Task/assets/58213582/c5cab8dd-b990-4b68-8cd6-53a36d7787d2" width="800" /><br />
+
+   **Настройки**
+   <br /><br />
+   
+   <img src="https://github.com/M1estere/Test_Task/assets/58213582/bd5ad84a-80c3-43aa-a4da-543cc4101e3a" width="800" /><br />
+  
+   **Уровень 1_5**
+   <br /><br />
+
+   <img src="https://github.com/M1estere/Test_Task/assets/58213582/5b693115-b098-45f3-9ea8-15afbff708b6" width="800" /><br />
  
-  **Уровень 1**
-  <br /><br />
+   **Уровень 1**
+   <br /><br />
   
-  <img src="https://github.com/M1estere/Test_Task/assets/58213582/a88d1582-359b-4b26-8308-f89b086d27e9" width="800" /><br />
+   <img src="https://github.com/M1estere/Test_Task/assets/58213582/a88d1582-359b-4b26-8308-f89b086d27e9" width="800" /><br />
   
-  **Уровень 2**
-  <br /><br />
+   **Уровень 2**
+   <br /><br />
 </div>
