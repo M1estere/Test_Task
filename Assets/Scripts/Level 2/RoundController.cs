@@ -104,7 +104,7 @@ public class RoundController : MonoBehaviour
     private void CheckRoundStats()
     {
         int alive = FindObjectsOfType<Human>().Length;
-        if (alive <= 0 || _roundIndex >= _levelConfiguration.Questions.Count)
+        if (alive <= 0 || _roundIndex >= _levelConfiguration.Questions.Count - 1)
         {
             DisplayGameOver(alive);
         } else

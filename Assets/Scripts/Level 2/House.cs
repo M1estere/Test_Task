@@ -25,15 +25,15 @@ public class House : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (PeopleInHouse.Count > 0)
-        {
-            _meshRenderer.materials[1].SetFloat("_Scale", 0.06f);
-            _meshRenderer.materials[1].SetColor("_Color", Color.green);
-        }
-        else if (LevelController.Instance.CurrentHuman != null)
+        if (LevelController.Instance.CurrentHuman != null)
         {
             _meshRenderer.materials[1].SetFloat("_Scale", 0.06f);
             _meshRenderer.materials[1].SetColor("_Color", Color.red);
+        }
+        else if (PeopleInHouse.Count > 0)
+        {
+            _meshRenderer.materials[1].SetFloat("_Scale", 0.06f);
+            _meshRenderer.materials[1].SetColor("_Color", Color.green);
         }
     }
 
@@ -41,14 +41,13 @@ public class House : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (PeopleInHouse.Count > 0)
-        {
-            PopHuman();
-            _meshRenderer.materials[^1].SetFloat("_Scale", 0);
-        }
-        else if (LevelController.Instance.CurrentHuman != null)
+        if (LevelController.Instance.CurrentHuman != null)
         {
             FindObjectOfType<SetupFastMove>().TransferToHouse(GetIndex);
+            _meshRenderer.materials[^1].SetFloat("_Scale", 0);
+        } else if (PeopleInHouse.Count > 0)
+        {
+            PopHuman();
             _meshRenderer.materials[^1].SetFloat("_Scale", 0);
         }
     }
