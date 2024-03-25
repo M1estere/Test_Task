@@ -4,6 +4,7 @@ using UnityEngine;
 public class RoundController : MonoBehaviour
 {
     [SerializeField] private Level2Config _levelConfiguration;
+    [SerializeField] private Light _globalLight;
 
     [SerializeField] private TMPro.TMP_Text[] _stands;
     [SerializeField] private TMPro.TMP_Text _questionText;
@@ -24,8 +25,12 @@ public class RoundController : MonoBehaviour
     private Countdown _countDown;
     private SetupFastMove _setupFastMove;
 
+    private LightmapData[] _startData;
+
     private void Awake()
     {
+        _startData = LightmapSettings.lightmaps;
+
         _countDown = FindObjectOfType<Countdown>();
         _setupFastMove = FindObjectOfType<SetupFastMove>();
     }
@@ -64,6 +69,9 @@ public class RoundController : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1);
 
+        LightmapSettings.lightmaps = new LightmapData[] { };
+        _globalLight.intensity = 0;
+
         Time.timeScale = 1;
         _nightComingScreen.GetComponent<Animator>().SetTrigger("Close");
 
@@ -84,6 +92,9 @@ public class RoundController : MonoBehaviour
         _dayComingScreen.SetActive(true);
 
         yield return new WaitForSecondsRealtime(1);
+
+        LightmapSettings.lightmaps = _startData;
+        _globalLight.intensity = 2;
 
         Time.timeScale = 1;
         _dayComingScreen.GetComponent<Animator>().SetTrigger("Close");
