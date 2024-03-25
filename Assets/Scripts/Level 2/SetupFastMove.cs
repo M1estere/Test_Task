@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SetupFastMove : MonoBehaviour
 {
@@ -7,6 +7,8 @@ public class SetupFastMove : MonoBehaviour
 
     [SerializeField] private GameObject _contentParent;
     [SerializeField] private GameObject _answerBlock;
+
+    [SerializeField] private TMPro.TMP_Text _infoText;
 
     private House[] _houses;
 
@@ -37,6 +39,7 @@ public class SetupFastMove : MonoBehaviour
     {
         _currentHuman = human;
         _content.SetActive(true);
+        _infoText.SetText($"({human.Name}) просто нажмите на нужный дом");
     }
 
     public void TransferToHouse(int index)
