@@ -41,7 +41,7 @@ public class SonicLevelController : MonoBehaviour
             yield return new WaitForSeconds(4);
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
 
         Time.timeScale = 0;
         _statsText.SetText($"Правильно: {_score} | Ошибок: {_mistakes}");

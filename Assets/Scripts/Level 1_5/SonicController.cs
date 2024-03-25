@@ -28,6 +28,8 @@ public class SonicController : MonoBehaviour
     {
         _animator.SetBool("Jump", _isJumping == true);
 
+        if (_isJumping) return;
+
         if (Input.GetKeyDown(KeyCode.A) && _roadIndex > 0)
         {
             _roadIndex--;
