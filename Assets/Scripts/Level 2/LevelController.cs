@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class LevelController : MonoBehaviour
     private SetupFastMove _setupFastMove;
     private NameGiverController _nameGiverController;
 
+    private RoundController _roundController;
+
+    private int _humans = 20;
+
     private void Awake()
     {
         if (Instance == null)
@@ -23,9 +28,27 @@ public class LevelController : MonoBehaviour
             Destroy(gameObject);
         }
 
+        _roundController = FindObjectOfType<RoundController>();
         _setupFastMove = FindObjectOfType<SetupFastMove>();
         _nameGiverController = FindObjectOfType<NameGiverController>();
     }
+
+    public void RemoveHuman()
+    {
+        _humans--;
+        if (_humans <= 0)
+        {
+            StartCoroutine(DelayedCall());
+        }
+    }
+
+    private IEnumerator DelayedCall()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        _roundController.EndRound();
+    }
+
+    public void SetHumansAmount(int amount) => _humans = amount;
 
     public void EndRound()
     {

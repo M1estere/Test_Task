@@ -43,7 +43,7 @@ public class House : MonoBehaviour
     {
         if (LevelController.Instance.CurrentHuman != null)
         {
-            FindObjectOfType<SetupFastMove>().TransferToHouse(GetIndex);
+            FindObjectOfType<SetupFastMove>().TransferToHouse(this);
             _meshRenderer.materials[^1].SetFloat("_Scale", 0);
         } else if (PeopleInHouse.Count > 0)
         {
@@ -56,7 +56,7 @@ public class House : MonoBehaviour
     {
         PeopleInHouse.Add(human);
 
-        print($"{human.Name} human added to {gameObject.name} ({_houseIndex - 1})");
+        LevelController.Instance.RemoveHuman();
     }
 
     public void PopHuman()
@@ -67,8 +67,6 @@ public class House : MonoBehaviour
 
             tHuman.gameObject.SetActive(true);
             PeopleInHouse.RemoveAt(PeopleInHouse.Count - 1);
-
-            print($"{tHuman.Name} human removed from {gameObject.name} ({_houseIndex - 1})");
         }
     }
 
@@ -84,7 +82,6 @@ public class House : MonoBehaviour
 
         LevelController.Instance.Score += PeopleInHouse.Count;
         PeopleInHouse.Clear();
-        print("All people resurrected");
     }
 
     private IEnumerator KillAllCoroutine()
@@ -101,6 +98,5 @@ public class House : MonoBehaviour
         }
 
         PeopleInHouse.Clear();
-        print("All people dead");
     }
 }

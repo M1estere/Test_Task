@@ -16,6 +16,9 @@ public class SonicController : MonoBehaviour
 
     private bool _isJumping = false;
 
+    private Animator _punchAnimator;
+    private bool _canPunch;
+
     public void ChangeJumping(bool state) => _isJumping = state;
 
     private void Awake()
@@ -47,5 +50,29 @@ public class SonicController : MonoBehaviour
             if (_isJumping) return;
             _jumpController.Jump();
         }
+
+        /*if (Input.GetMouseButtonDown(0))
+        {
+            if (_canPunch)
+            {
+                _punchAnimator.enabled = true;
+                _punchAnimator.SetTrigger("Punch");
+                _canPunch = false;
+
+                print("Punch");
+            }
+        }*/
     }
+
+    /*public void SetPunchable(Animator animator)
+    {
+        _canPunch = true;
+        _punchAnimator = animator;
+    }
+
+    public void SetUnpunchable()
+    {
+        _canPunch = false;
+        _punchAnimator = null;
+    }*/
 }

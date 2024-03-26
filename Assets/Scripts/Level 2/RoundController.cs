@@ -61,6 +61,7 @@ public class RoundController : MonoBehaviour
 
     private IEnumerator NightCanvasCoroutine()
     {
+        _countDown.CountdownGo = false;
         Time.timeScale = 0;
         _nightComingScreen.SetActive(true);
 
@@ -96,6 +97,7 @@ public class RoundController : MonoBehaviour
         LightmapSettings.lightmaps = _startData;
         _globalLight.intensity = 2;
 
+        _countDown.CountdownGo = true;
         Time.timeScale = 1;
         _dayComingScreen.GetComponent<Animator>().SetTrigger("Close");
 
@@ -120,8 +122,8 @@ public class RoundController : MonoBehaviour
             DisplayGameOver(alive);
         } else
         {
-            print("Okay");
             FindObjectOfType<LevelStats>().UpdateInfo(_roundIndex + 2, alive);
+            LevelController.Instance.SetHumansAmount(alive);
             RoundStart();
         }
     }
@@ -153,7 +155,6 @@ public class RoundController : MonoBehaviour
 
         foreach (House house in houses)
         {
-            print(house.gameObject.name);
             if (house.PeopleInHouse.Count < 1) continue;
 
             if (_levelConfiguration.Questions[_roundIndex].Answers[house.GetIndex].IsCorrect == false) house.KillAllHumans();

@@ -58,6 +58,16 @@ public class SetupFastMove : MonoBehaviour
         }        
     }
 
+    public void TransferToHouse(House house)
+    {
+        house.AddHuman(_currentHuman);
+
+        _currentHuman.gameObject.SetActive(false);
+        LevelController.Instance.CurrentHuman = null;
+
+        Close();
+    }
+
     public void Close()
     {
         _currentHuman = null;

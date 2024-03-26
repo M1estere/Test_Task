@@ -38,18 +38,12 @@ public class SetupSonicAnswerBlock : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out SonicController controller))
         {
-            if (_isCorrect)
-            {
-                _controller.PlusCorrect();
-                print("Correct");
-            }
-            else
-            {
-                _controller.PlusMistake();
-                print("Incorrect");
-            }
+            if (_isCorrect) _controller.PlusCorrect();
+            else _controller.PlusMistake();
 
             Destroy(gameObject);
         }
     }
+
+    public void DestroyThis() => Destroy(gameObject);
 }
