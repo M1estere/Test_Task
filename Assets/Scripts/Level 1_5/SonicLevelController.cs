@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SonicLevelController : MonoBehaviour
@@ -28,6 +29,7 @@ public class SonicLevelController : MonoBehaviour
 
     private IEnumerator Start()
     {
+        int iteration = 0;
         _answers = new(_levelConfiguration.Questions[0].Answers);
 
         _questionText.SetText(_levelConfiguration.Questions[0].Content);
@@ -37,7 +39,7 @@ public class SonicLevelController : MonoBehaviour
 
         while (_answers.Count > 0)
         {
-            Spawn();
+            Spawn(iteration++ == 0);
             yield return new WaitForSeconds(4);
         }
 
@@ -50,25 +52,38 @@ public class SonicLevelController : MonoBehaviour
         print("Game ended");
     }
 
-    private void Spawn()
+    private void Spawn(bool onlyWrong)
     {
         List<float> positions = new(Positions);
+        List<Answer> wrongAnswers = _answers.Where(answer => answer.IsCorrect == false).ToList();
 
-        int amount = Random.Range(2, 6);
+        int amount = Random.Range(2, onlyWrong ? 4 : 6);
         for (int i = 0; i < amount; i++)
         {
-            if (_answers.Count > 0)
-            {
-                float zPos = positions[Random.Range(0, positions.Count)];
-                positions.Remove(zPos);
+            if (_answers.Count <= 0) continue;
 
+            float zPos = positions[Random.Range(0, positions.Count)];
+            positions.Remove(zPos);
+
+            if (onlyWrong)
+            {
+                int index = Random.Range(0, wrongAnswers.Count);
+                Answer randomAnswer = wrongAnswers[index];
+                wrongAnswers.RemoveAt(index);
+
+                SetupSonicAnswerBlock block = Instantiate(_answerBlock,
+                                                            new Vector3(50 + Random.Range(-1, 1.5f), .6f, zPos),
+                                                            _answerBlock.transform.rotation).GetComponent<SetupSonicAnswerBlock>();
+                block.Set(randomAnswer.Content, randomAnswer.IsCorrect);
+            } else
+            {
                 int index = Random.Range(0, _answers.Count);
                 Answer randomAnswer = _answers[index];
                 _answers.RemoveAt(index);
 
-                SetupSonicAnswerBlock block = Instantiate(_answerBlock, 
-                                                          new Vector3(50 + Random.Range(-1, 1.5f), .6f, zPos),
-                                                          _answerBlock.transform.rotation).GetComponent<SetupSonicAnswerBlock>();
+                SetupSonicAnswerBlock block = Instantiate(_answerBlock,
+                                                            new Vector3(50 + Random.Range(-1, 1.5f), .6f, zPos),
+                                                            _answerBlock.transform.rotation).GetComponent<SetupSonicAnswerBlock>();
                 block.Set(randomAnswer.Content, randomAnswer.IsCorrect);
             }
         }
